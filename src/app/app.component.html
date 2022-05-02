@@ -1,16 +1,25 @@
-<div class="container">
+<div class="container mt-3">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="auth">Authorization</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="dashboard">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="operations">Operations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="parties">Parties</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="reports">Reports</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="tables">Tables</a>
+    </li>
 
-  <a routerLink="auth">Authorization</a>
-  <br>
-  <a routerLink="dashboard">Dashboard</a>
-  <br>
-  <a routerLink="operations">Operations</a>
-  <br>
-  <div class="btn-group-vertical" role="group" aria-label="Basic mixed styles example">
-    <button type="button" class="btn btn-danger">Left</button>
-    <button type="button" class="btn btn-warning">Middle</button>
-    <button type="button" class="btn btn-success">Right</button>
-  </div>
+</ul>
 
   <router-outlet></router-outlet>
 
