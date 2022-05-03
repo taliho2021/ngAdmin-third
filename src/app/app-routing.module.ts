@@ -1,8 +1,12 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { NgModule } from '@angular/core';
+import { LoginComponent } from './auth/login/login.component';
+import { Page404Component } from './auth/page404/page404.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', component: LoginComponent},
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
@@ -32,7 +36,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./tables/tables.module').then((m) => m.TablesModule),
   },
-  { path: 'widgets', loadChildren: () => import('./widgets/widgets.module').then(m => m.WidgetsModule) },
+  { path: 'widgets', 
+  loadChildren: () => import('./widgets/widgets.module').then(m => m.WidgetsModule) },
+
+  { path: '**',
+    component: Page404Component}
 ];
 
 @NgModule({
