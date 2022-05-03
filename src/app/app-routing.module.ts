@@ -6,7 +6,7 @@ import { Page404Component } from './auth/page404/page404.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: LoginComponent},
+  { path: 'home',  component: LoginComponent},
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
