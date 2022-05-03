@@ -1,6 +1,34 @@
 <div class="container-fluid p-5 bg-primary text-white text-center">
   <h1>Dashboard</h1>
-  <p>Resize this responsive page to see the effect!</p>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="admin">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="importers">Importers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="exporters">Exporters</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="forwarders">Forwarders</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="truckers">Truckers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="cfs-terminal-oper">CFS Terminal Op</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="users">Users</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="managers">Managers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="shippers">Shippers</a>
+    </li>
+</ul>
 </div>
 
 <div class="container mt-5">
@@ -22,3 +50,5 @@
     </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>
