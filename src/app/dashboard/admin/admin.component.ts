@@ -8,7 +8,7 @@ import { AuthService } from '../../auth/auth.service';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
-  isLoggedIn!: boolean;
+  isLoggedIn: boolean = false;
   constructor(private authService: AuthService) {}
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
