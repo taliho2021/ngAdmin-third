@@ -1,1 +1,10 @@
 <p>admin works!</p>
+
+<div *ngIf = "!isLoggedIn; else logBlock">
+  <h2>I am not logged in.</h2>
+</div>
+<ng-template #logBlock> <h2>I am logged in.</h2></ng-template>
+
+<p>Logged in status is: {{ isLoggedIn }}</p>
+
+<button (click)="logout()">Logout</button>

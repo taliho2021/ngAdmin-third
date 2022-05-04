@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../auth/auth.service';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss']
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
+  isLoggedIn!: boolean;
+  constructor(private authService: AuthService) {}
 
-  constructor() { }
-
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }

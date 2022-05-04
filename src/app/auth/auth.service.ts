@@ -2,40 +2,47 @@ import { Injectable } from '@angular/core';
 import moment from 'moment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor() { }
+  constructor() {}
   setSessionStorage(responseObj: any) {
-
     // Adds the expiration time defined on the JWT to the current moment
-    const expiresAt = moment().add(Number.parseInt(responseObj.expiresIn), 'days');
+    const expiresAt = moment().add(
+      Number.parseInt(responseObj.expiresIn),
+      'second'
+    );
 
-    sessionStorage.setItem('id_token', responseObj.token);
-    sessionStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
-}
+    sessionStorage.setItem('id_token', responseObj.accessToken);
+    sessionStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+  }
 
-logout() {
-    sessionStorage.removeItem("id_token");
-    sessionStorage.removeItem("expires_at");
-}
+  logout() {
+    sessionStorage.removeItem('id_token');
+    sessionStorage.removeItem('expires_at');
+  }
 
-public isLoggedIn() {
-    return moment().isBefore(this.getExpiration(), "second");
-}
+  public isLoggedIn() {
+    return moment().isBefore(this.getExpiration(), 'second');
+  }
 
-isLoggedOut() {
+  isLoggedOut() {
     return !this.isLoggedIn();
-}
+  }
 
-getExpiration() {
-    const expiration = sessionStorage.getItem("expires_at");
+  getExpiration() {
+    const expiration = sessionStorage.getItem('expires_at');
     if (expiration) {
-        const expiresAt = JSON.parse(expiration);
-        return moment(expiresAt);
+      const expiresAt = JSON.parse(expiration);
+      return moment(expiresAt);
     } else {
-        return moment();
+      return moment();
     }
-}
+  }
+
+  // getExpiration() {
+  //   const expiration = sessionStorage.getItem('expires_at');
+  //   const expiresAt = JSON.parse(expiration);
+  //   return moment(expiresAt);
+  // }
 }
