@@ -11,7 +11,6 @@ export class AdminComponent implements OnInit {
   isLoggedIn: boolean = false;
   constructor(private authService: AuthService) {}
 
-  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
   }
@@ -19,4 +18,5 @@ export class AdminComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+  
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './auth/login/login.component';
 import { Page404Component } from './auth/page404/page404.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,11 +14,13 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'operations',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./operations/operations.module').then((m) => m.OperationsModule),
   },

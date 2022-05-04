@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
+  isLoggedIn: boolean =false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -54,7 +55,9 @@ export class LoginComponent implements OnInit {
 
         // When observable completes
         () => {
-          console.log('done!');
+          // console.log('Sign in process done!');
+          // console.log('From log in screen', this.isLoggedIn);
+          // this.isLoggedIn = this.authService.isLoggedIn();
           this.router.navigate(['/dashboard/admin']);
         }
       );
