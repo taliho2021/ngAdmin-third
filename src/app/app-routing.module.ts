@@ -6,7 +6,8 @@ import { NgModule } from '@angular/core';
 import { Page404Component } from './auth/page404/page404.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  
   { path: 'home', component: LoginComponent },
   {
     path: 'auth',
