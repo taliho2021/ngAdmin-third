@@ -18,20 +18,23 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="tables">Tables</a>
     </li>
-
+    <li class="nav-item">
+      <button (click)="logout()">Logout</button>
+    </li>
 </ul>
+
 
   <router-outlet></router-outlet>
 
 </div>
 <ng-container>
-  <div>
+  <div class="container">
     <h2>I am inside ng-container! I will display on html.</h2>
   </div>
-  <div>
+  <div class="container">
     <h2> 2nd Div element</h2>
   </div>
-  </ng-container>
+</ng-container>
 
 <ng-template>I am inside ng-template. You will not see me</ng-template>
 
@@ -48,7 +51,7 @@
 </div>
 
 <ng-template #template>
-	<h2>Finally I am seen! (When showTemplate is true) </h2>
+	<h2 class="container">Finally I am seen! (When showTemplate is true) </h2>
 </ng-template>
 
 <table class="container">

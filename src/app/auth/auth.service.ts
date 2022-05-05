@@ -16,7 +16,7 @@ export class AuthService {
       'days'
     );
 
-    sessionStorage.setItem('id_token', responseObj.accessToken);
+    sessionStorage.setItem('id_token', responseObj.token);
     sessionStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
