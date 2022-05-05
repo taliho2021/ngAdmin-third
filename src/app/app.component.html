@@ -24,3 +24,46 @@
   <router-outlet></router-outlet>
 
 </div>
+<ng-container>
+  <div>
+    <h2>I am inside ng-container! I will display on html.</h2>
+  </div>
+  <div>
+    <h2> 2nd Div element</h2>
+  </div>
+  </ng-container>
+
+<ng-template>I am inside ng-template. You will not see me</ng-template>
+
+<ng-template *ngIf="showContents">
+	You still won’t see me (even though I’m using a structural directive, there’s nothing that's telling Angular to use me)
+</ng-template>
+
+<ng-template *ngFor="let item of items">
+	No dice (same reason as *ngIf above)
+</ng-template>
+
+<div *ngIf="!showTemplate else template">
+	Hello
+</div>
+
+<ng-template #template>
+	<h2>Finally I am seen! (When showTemplate is true) </h2>
+</ng-template>
+
+<table class="container">
+  <tbody>
+    <ng-container *ngFor="let item of items">
+      <tr *ngIf="item">
+        <td>{{item}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<ng-container *ngTemplateOutlet="template1">
+</ng-container>
+
+<ng-template #template1 let-food="donut">
+	{{food}}
+</ng-template>

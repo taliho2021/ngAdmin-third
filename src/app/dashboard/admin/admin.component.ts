@@ -18,5 +18,4 @@ export class AdminComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
-  
 }
