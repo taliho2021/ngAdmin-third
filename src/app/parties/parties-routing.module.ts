@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { PartiesComponent } from './parties.component';
 import { ServiceProvidersComponent } from './service-providers/service-providers.component';
 import { TruckersComponent } from './truckers/truckers.component';
+import { ProfileComponent } from '../auth/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'foreign', component: ForeignComponent },
       { path: 'service-providers', component: ServiceProvidersComponent },
       { path: 'truckers', component: TruckersComponent },
+      { path: 'profile', component: ProfileComponent}
     ],
   },
 ];
